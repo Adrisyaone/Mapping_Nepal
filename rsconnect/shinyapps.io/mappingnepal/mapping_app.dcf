@@ -1,0 +1,12 @@
+name: mapping_app
+title: mapping_app
+username: mappingnepal
+account: mappingnepal
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 16079867
+bundleId: 11185889
+url: https://mappingnepal.shinyapps.io/mapping_app/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
