@@ -2,17 +2,7 @@
 server <- function(input, output, session) {
   
   # -------------------------
-  # 1. Load all Provinces
-  # -------------------------
-  updateSelectInput(
-    session, "province",
-    choices = c(" ", sort(unique(dt$PROVINCE))),
-    selected=" "
-  )
-  
-  
-  # -------------------------
-  # 2. District depends on Province
+  # 1. District depends on Province
   # -------------------------
   observeEvent(input$province_cascad, {
     
@@ -30,7 +20,7 @@ server <- function(input, output, session) {
   })
   
   # -------------------------
-  # 3. Municipality depends on District
+  # 2. Municipality depends on District
   # -------------------------
   observeEvent(input$district_cascad, {
     
@@ -66,7 +56,7 @@ server <- function(input, output, session) {
   
   
   
-  # Reactive dataset selector
+  # select shape file
   selected_shape <- reactive({
     if (input$admin_level == "National") {
       national
@@ -82,8 +72,6 @@ server <- function(input, output, session) {
   })
   
   selected_shape2 <- reactive({
-    
-    # Default
     shp <- national
     
     # Case 1: Nothing selected

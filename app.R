@@ -43,12 +43,13 @@ province$PROVINCE <- ifelse(province$PR_NAME=="Province No 1", "Koshi",
 national<-sf::st_read("Dataset/hermes_NPL_new_wgs(1)/hermes_NPL_new_wgs_0.shp")
 national$NATIONAL <- "Nepal"
 
-
+# list of municipalities, district and province (cascading data)
 dt <- municipality %>% 
   select(PROVINCE, DISTRICT, LOCAL, TYPE) %>% 
   mutate(geometry<-NULL)
 
 
+# load ui.R, server.R and functions.R
 source("ui.R")
 source("server.R")
 source("functions.R")

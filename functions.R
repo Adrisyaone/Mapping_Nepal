@@ -4,7 +4,7 @@ full_map <- function(shape_data, selected_opt, map_theme, legend, show_labels) {
   p <- ggplot() +
     geom_sf(data = shape_data, aes(fill = !!sym(toupper(selected_opt))))
   
-  # ---- Add Labels If TRUE ----
+  # ---- Add Labels If show_labels=TRUE ----
   if (isTRUE(show_labels)) {
     p <- p +
       geom_sf_text(
@@ -27,14 +27,14 @@ full_map <- function(shape_data, selected_opt, map_theme, legend, show_labels) {
       pad_y = unit(0.5, "in"),
       style = north_arrow_fancy_orienteering
     ) +
-    do.call(map_theme, list()) +   # apply selected theme
+    do.call(map_theme, list()) +  
     theme(legend.position = legend)
   
   return(p)
 }
 
 
-# map2
+# MAP2
 # Full map of all national, subnational levels of Nepal
 full_map2 <- function(shape_data,  map_theme, legend, show_labels) {
   
