@@ -1,6 +1,11 @@
 # Define server logic required to draw a histogram
 server <- function(input, output, session) {
   
+  library(shiny)
+  library(ggspatial)
+  library(tidyverse)
+  library(sf)
+  library(ggplot2)
   # -------------------------
   # 1. District depends on Province
   # -------------------------

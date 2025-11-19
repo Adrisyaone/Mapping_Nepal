@@ -36,11 +36,14 @@ full_map <- function(shape_data, selected_opt, map_theme, legend, show_labels) {
 
 # MAP2
 # Full map of all national, subnational levels of Nepal
-full_map2 <- function(shape_data,  map_theme, legend, show_labels) {
+full_map2 <- function(shape_data,  map_theme, legend, show_labels) { 
   
   
   p <- ggplot() +
     geom_sf(data = shape_data)
+  
+
+  
   
   # ---- Add Labels If TRUE ----
   if (isTRUE(show_labels)) {
@@ -52,6 +55,8 @@ full_map2 <- function(shape_data,  map_theme, legend, show_labels) {
         color = "black"
       )
   }
+  
+
   
   # ---- Add Other Map Elements ----
   p <- p +
@@ -70,5 +75,9 @@ full_map2 <- function(shape_data,  map_theme, legend, show_labels) {
   
   return(p)
 }
+
+
+
+# , layover, pr_name, dist_name, mun_name, pro_map, dist_map, mun_map
 
 

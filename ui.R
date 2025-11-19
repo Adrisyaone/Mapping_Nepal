@@ -21,6 +21,7 @@ ui <- fluidPage(
                                 "Upamahanagarpalika", "Watershed and Wildlife Reserve",
                                 "Wildlife Reserve")),
         selectInput("municipality_cascad", "Select Municipality:", choices = NULL)
+        
       ),
       
       selectInput("map_theme", "Select Map Theme:",
